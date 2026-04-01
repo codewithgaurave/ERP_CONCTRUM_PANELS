@@ -1,0 +1,14 @@
+Pagination buttons should be visible at the bottom of the table.
+
+If you don't see them:
+1. Scroll down to the bottom of the employees table
+2. Look for "Previous" and "Next" buttons
+3. Check if you have more than 10 employees
+
+The pagination shows:
+- Page X of Y
+- Previous button (disabled on page 1)
+- Next button (disabled on last page)
+- Showing 1-10 of 50 employees
+
+If still not visible, refresh the page and check console for errors.
