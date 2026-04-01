@@ -23,7 +23,7 @@ const AssetRequests = () => {
     try {
       const [requestsRes, categoriesRes] = await Promise.all([
         fetch(`${import.meta.env.VITE_BASE_API}/api/asset-requests/my-requests`, {
-          headers: { 'Authorization': `Bearer ${localStorage.getItem('hrms-token')}` }
+          headers: { 'Authorization': `Bearer ${localStorage.getItem('ERP-token')}` }
         }),
         assetAPI.getCategories()
       ]);
@@ -46,7 +46,7 @@ const AssetRequests = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+          'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
         },
         body: JSON.stringify(formData)
       });

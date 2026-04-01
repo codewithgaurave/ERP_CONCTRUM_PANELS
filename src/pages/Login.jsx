@@ -93,7 +93,7 @@ const Login = () => {
                         className="text-3xl font-bold mb-2"
                         style={{ color: themeColors.primary }}
                     >
-                        HRMS Portal
+                        ERP Portal
                     </h1>
                     <p style={{ color: themeColors.text }}>Sign in to your account</p>
                 </div>

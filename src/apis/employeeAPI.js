@@ -4,7 +4,7 @@ import apiRoutes from "../contants/api";
 
 // 🔑 Helper: get auth header with token
 const getAuthHeader = () => {
-  const token = localStorage.getItem("hrms-token");
+  const token = localStorage.getItem("ERP-token");
   return {
     Authorization: `Bearer ${token}`,
   };

@@ -5,7 +5,7 @@
 ### 1. **HR Manager Payroll Access Issue**
 - **Problem**: HR managers could see ALL employees' payrolls instead of only their team's payrolls
 - **Files Fixed**: 
-  - `HRMS-Backend/controllers/payrollController.js`
+  - `ERP-Backend/controllers/payrollController.js`
   - `src/pages/Payroll.jsx`
 
 ### 2. **Backend Controller Fixes**
@@ -58,7 +58,7 @@ query.employee = req.employee._id;
 
 ### 6. **Files Modified**
 
-1. `HRMS-Backend/controllers/payrollController.js` - Added team filtering for HR managers
+1. `ERP-Backend/controllers/payrollController.js` - Added team filtering for HR managers
 2. `src/pages/Payroll.jsx` - Fixed employee dropdown to show only HR's team
 
 ### 7. **Testing Required**

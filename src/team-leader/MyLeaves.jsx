@@ -27,7 +27,7 @@ const MyLeaves = () => {
     try {
       setLoading(true);
       setError(null);
-      const token = localStorage.getItem('hrms-token');
+      const token = localStorage.getItem('ERP-token');
       console.log('Team Leader - Fetching leaves with token:', token ? 'Present' : 'Missing');
       
       const response = await fetch(`${apiRoutes.leaves}/my-leaves`, {
@@ -77,7 +77,7 @@ const MyLeaves = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+          'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
         },
         body: JSON.stringify(newLeave)
       });

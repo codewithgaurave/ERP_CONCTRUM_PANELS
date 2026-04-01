@@ -13,7 +13,7 @@ const payrollAPI = {
     
     const response = await axios.get(`${apiRoutes.payroll}?${params.toString()}`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response;
@@ -30,7 +30,7 @@ const payrollAPI = {
     
     const response = await axios.get(`${apiRoutes.payroll}/team/hr?${params.toString()}`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response;
@@ -40,7 +40,7 @@ const payrollAPI = {
   getAllPayrolls: async () => {
     const response = await axios.get(apiRoutes.payroll, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response.data;
@@ -50,7 +50,7 @@ const payrollAPI = {
   getById: async (id) => {
     const response = await axios.get(`${apiRoutes.payroll}/${id}`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response;
@@ -60,7 +60,7 @@ const payrollAPI = {
   getPayrollById: async (id) => {
     const response = await axios.get(`${apiRoutes.payroll}/${id}`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response.data;
@@ -71,7 +71,7 @@ const payrollAPI = {
     const response = await axios.post(apiRoutes.payroll, payrollData, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response.data;
@@ -82,7 +82,7 @@ const payrollAPI = {
     const response = await axios.put(`${apiRoutes.payroll}/${id}`, payrollData, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response.data;
@@ -92,7 +92,7 @@ const payrollAPI = {
   delete: async (id) => {
     const response = await axios.delete(`${apiRoutes.payroll}/${id}`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response.data;
@@ -103,7 +103,7 @@ const payrollAPI = {
     const response = await axios.post(`${apiRoutes.payroll}/generate-all`, data, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response.data;

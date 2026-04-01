@@ -154,12 +154,12 @@ const ThemeContext = createContext();
 
 export const ThemeProvider = ({ children }) => {
   const getInitialTheme = () => {
-    const savedTheme = localStorage.getItem("hrms-theme") || "light";
+    const savedTheme = localStorage.getItem("ERP-theme") || "light";
     return savedTheme;
   };
 
   const getInitialPalette = () => {
-    const savedPalette = localStorage.getItem("hrms-palette") || "professional";
+    const savedPalette = localStorage.getItem("ERP-palette") || "professional";
     return savedPalette;
   };
 
@@ -239,8 +239,8 @@ export const ThemeProvider = ({ children }) => {
     html.setAttribute("data-palette", palette);
     
     // Save to localStorage
-    localStorage.setItem("hrms-theme", theme);
-    localStorage.setItem("hrms-palette", palette);
+    localStorage.setItem("ERP-theme", theme);
+    localStorage.setItem("ERP-palette", palette);
   }, [theme, palette, themeColors.cssVars]);
 
   const toggleTheme = () => {

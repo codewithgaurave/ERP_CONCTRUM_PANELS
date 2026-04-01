@@ -2,7 +2,7 @@ import axios from "axios";
 import apiRoutes from "../contants/api";
 
 const getAuthHeader = () => {
-  const token = localStorage.getItem("hrms-token");
+  const token = localStorage.getItem("ERP-token");
   return {
     Authorization: `Bearer ${token}`,
   };

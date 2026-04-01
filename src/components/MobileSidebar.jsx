@@ -131,7 +131,7 @@ const MobileSidebar = ({
             className="text-xl font-bold"
             style={{color: themeColors.primary}}
           >
-            HRMS Panel
+            ERP Panel
           </h1>
           
           <button

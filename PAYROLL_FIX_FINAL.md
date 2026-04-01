@@ -9,7 +9,7 @@ The `employeeId` query parameter was overriding the role-based filtering in the 
 ## Solution Applied:
 
 ### 1. **Fixed Backend Controller Logic**
-- **File**: `HRMS-Backend/controllers/payrollController.js`
+- **File**: `ERP-Backend/controllers/payrollController.js`
 - **Issue**: `employeeId` filter was overriding the team-based filtering
 - **Fix**: Added proper access control to prevent unauthorized employee access
 
@@ -90,8 +90,8 @@ const fetchPayrolls = async () => {
 
 ## Files Modified:
 
-1. `HRMS-Backend/controllers/payrollController.js` - Added `getHRTeamPayrolls()`
-2. `HRMS-Backend/routes/payrollRoutes.js` - Added `/hr-team` route
+1. `ERP-Backend/controllers/payrollController.js` - Added `getHRTeamPayrolls()`
+2. `ERP-Backend/routes/payrollRoutes.js` - Added `/hr-team` route
 3. `src/apis/payrollAPI.js` - Added `getHRTeamPayrolls()` method
 4. `src/pages/Payroll.jsx` - Updated to use new endpoint
 

@@ -24,7 +24,7 @@ const MyLeaves = () => {
   const fetchMyLeaves = async () => {
     try {
       console.log('Starting fetchMyLeaves...');
-      const token = localStorage.getItem('hrms-token');
+      const token = localStorage.getItem('ERP-token');
       if (!token) {
         toast.error('Please login again');
         return;
@@ -60,7 +60,7 @@ const MyLeaves = () => {
 
   const fetchLeaveTypes = async () => {
     try {
-      const token = localStorage.getItem('hrms-token');
+      const token = localStorage.getItem('ERP-token');
       const response = await fetch(`${apiRoutes.leaves}/available-types`, {
         headers: {
           'Authorization': `Bearer ${token}`
@@ -100,7 +100,7 @@ const MyLeaves = () => {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+          'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
         },
         body: JSON.stringify(formData)
       });

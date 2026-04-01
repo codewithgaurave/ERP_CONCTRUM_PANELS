@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const getAuthHeader = () => ({
-  Authorization: `Bearer ${localStorage.getItem('hrms-token')}`
+  Authorization: `Bearer ${localStorage.getItem('ERP-token')}`
 });
 
 const BASE = `${import.meta.env.VITE_BASE_API}/${import.meta.env.VITE_API_PREFIX || 'api'}/employee-form-links`;

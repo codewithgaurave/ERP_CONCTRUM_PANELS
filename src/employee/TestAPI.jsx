@@ -10,7 +10,7 @@ const TestAPI = () => {
   }, []);
 
   const testAPIs = async () => {
-    const token = localStorage.getItem('hrms-token');
+    const token = localStorage.getItem('ERP-token');
     const baseURL = import.meta.env.VITE_BASE_API;
     
     console.log('Testing APIs with token:', token);

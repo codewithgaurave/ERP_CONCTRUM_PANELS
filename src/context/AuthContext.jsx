@@ -10,8 +10,8 @@ export const AuthProvider = ({ children }) => {
 
   // 🔹 Get user and token from localStorage
   useEffect(() => {
-    const savedUser = localStorage.getItem("hrms-user");
-    const savedToken = localStorage.getItem("hrms-token");
+    const savedUser = localStorage.getItem("ERP-user");
+    const savedToken = localStorage.getItem("ERP-token");
     
     if (savedUser) {
       setUser(JSON.parse(savedUser));
@@ -28,16 +28,16 @@ export const AuthProvider = ({ children }) => {
   const setLoginData = (userData, authToken) => {
     setUser(userData);
     setToken(authToken);
-    localStorage.setItem("hrms-user", JSON.stringify(userData));
-    localStorage.setItem("hrms-token", authToken);
+    localStorage.setItem("ERP-user", JSON.stringify(userData));
+    localStorage.setItem("ERP-token", authToken);
   };
 
   // 🔹 Logout function
   const logout = () => {
     setUser(null);
     setToken(null);
-    localStorage.removeItem("hrms-user");
-    localStorage.removeItem("hrms-token");
+    localStorage.removeItem("ERP-user");
+    localStorage.removeItem("ERP-token");
   };
 
   // 🔹 Check if user is logged in

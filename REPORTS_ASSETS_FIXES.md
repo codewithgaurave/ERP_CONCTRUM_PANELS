@@ -73,10 +73,10 @@ const filteredAssets = assets.filter(asset => {
 ## Files Modified:
 
 ### **Backend:**
-1. `HRMS-Backend/controllers/reportsController.js` - Added 4 new HR team functions
-2. `HRMS-Backend/routes/reportsRoutes.js` - Added 4 new team routes
-3. `HRMS-Backend/controllers/assetController.js` - Added 3 new HR team functions  
-4. `HRMS-Backend/routes/assetRoutes.js` - Added 3 new team routes
+1. `ERP-Backend/controllers/reportsController.js` - Added 4 new HR team functions
+2. `ERP-Backend/routes/reportsRoutes.js` - Added 4 new team routes
+3. `ERP-Backend/controllers/assetController.js` - Added 3 new HR team functions  
+4. `ERP-Backend/routes/assetRoutes.js` - Added 3 new team routes
 
 ### **Frontend (To be updated):**
 - Reports components need to use `/team/` endpoints for HR managers

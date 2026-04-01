@@ -8,7 +8,7 @@ const leaveAPI = {
   getMyLeaves: async () => {
     const response = await axios.get(`${API_URL}/my-leaves`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response.data;
@@ -25,7 +25,7 @@ const leaveAPI = {
     
     const response = await axios.get(`${API_URL}/my-teams-leaves?${params.toString()}`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response;
@@ -36,7 +36,7 @@ const leaveAPI = {
     const response = await axios.put(`${API_URL}/${id}/status`, { status }, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response.data;
@@ -47,7 +47,7 @@ const leaveAPI = {
     const response = await axios.post(API_URL, leaveData, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response.data;
@@ -57,7 +57,7 @@ const leaveAPI = {
   getLeaveById: async (id) => {
     const response = await axios.get(`${API_URL}/${id}`, {
       headers: {
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response.data;
@@ -68,7 +68,7 @@ const leaveAPI = {
     const response = await axios.put(`${API_URL}/${id}`, updateData, {
       headers: {
         'Content-Type': 'application/json',
-        'Authorization': `Bearer ${localStorage.getItem('hrms-token')}`
+        'Authorization': `Bearer ${localStorage.getItem('ERP-token')}`
       }
     });
     return response.data;

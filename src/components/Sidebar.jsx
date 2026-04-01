@@ -151,7 +151,7 @@ const Sidebar = ({
               className="text-xl font-bold"
               style={{color: themeColors.primary}}
             >
-              HRMS Panel
+              ERP Panel
             </h1>
             
             <button
@@ -246,7 +246,7 @@ const Sidebar = ({
             className="text-xl font-bold transition-all duration-300 opacity-100"
             style={{color: themeColors.primary}}
           >
-            HRMS Panel
+            ERP Panel
           </h1>
         ) : (
           <div className="w-6 h-6"></div>

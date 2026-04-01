@@ -1,4 +1,4 @@
-# HRMS Data Filtering Fixes Applied
+# ERP Data Filtering Fixes Applied
 
 ## Issues Fixed:
 
@@ -12,18 +12,18 @@ The main problem was that HR managers could see ALL employees' data instead of o
 
 #### Backend Controller Fixes:
 
-**A. Attendance Controller (`HRMS-Backend/controllers/attendanceController.js`)**
+**A. Attendance Controller (`ERP-Backend/controllers/attendanceController.js`)**
 - Fixed `getAttendance()` function to filter by `addedBy: req.employee._id` for HR managers
 - Fixed `getAttendanceSummary()` function to check if employee was added by current HR
 - Fixed `getEmployeeAttendances()` function to restrict HR access to their added employees only
 - Updated search functionality to search only within HR's added employees
 
-**B. Employee Controller (`HRMS-Backend/controllers/employeeController.js`)**
+**B. Employee Controller (`ERP-Backend/controllers/employeeController.js`)**
 - Fixed `getAllEmployees()` function to show only employees added by current HR manager
 - Fixed `getEmployeesWithoutFilters()` function with proper role-based filtering
 - Added proper access control for HR managers vs Team Leaders vs Employees
 
-**C. Leave Controller (`HRMS-Backend/controllers/leaveController.js`)**
+**C. Leave Controller (`ERP-Backend/controllers/leaveController.js`)**
 - Fixed `getMyAndTeamLeaves()` function to show only leaves of employees added by HR
 - Fixed `getMyAndTeamLeavesWithoutFilters()` function with proper role-based filtering
 - Ensured HR managers only see leave requests from employees they manage
@@ -69,9 +69,9 @@ The main problem was that HR managers could see ALL employees' data instead of o
 ## Files Modified:
 
 1. `src/apis/leaveAPI.js` - Fixed localhost API URL
-2. `HRMS-Backend/controllers/attendanceController.js` - Added team filtering
-3. `HRMS-Backend/controllers/employeeController.js` - Added team filtering  
-4. `HRMS-Backend/controllers/leaveController.js` - Added team filtering
+2. `ERP-Backend/controllers/attendanceController.js` - Added team filtering
+3. `ERP-Backend/controllers/employeeController.js` - Added team filtering  
+4. `ERP-Backend/controllers/leaveController.js` - Added team filtering
 
 ## Next Steps:
 
