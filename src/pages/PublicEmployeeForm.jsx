@@ -15,6 +15,7 @@ const PublicEmployeeForm = () => {
     firstName: '', lastName: '', email: '', mobile: '',
     alternateMobile: '', whatsappNumber: '', gender: '', dob: '',
     street: '', city: '', state: '', country: 'India', pincode: '',
+    bankName: '', accountNumber: '', ifscCode: '', accountHolderName: '', branchName: '',
     answers: {},
     files: {}
   });
@@ -42,7 +43,7 @@ const PublicEmployeeForm = () => {
   const hasSectionBreaks = form?.fields?.some(f => f.fieldType === 'section_break') || false;
   
   const sections = form ? [
-    ...(form.includeBaseFields?.personalInfo || form.includeBaseFields?.address ? ['base'] : []),
+    ...(form.includeBaseFields?.personalInfo || form.includeBaseFields?.address || form.includeBaseFields?.bankDetails ? ['base'] : []),
     ...form.fields.reduce((acc, f, i) => {
       if (f.fieldType === 'section_break') acc.push(i);
       return acc;
@@ -200,6 +201,18 @@ const PublicEmployeeForm = () => {
                     <div><label className={labelClass}>State</label><input name="state" value={data.state} onChange={handleChange} className={inputClass} /></div>
                     <div><label className={labelClass}>Country</label><input name="country" value={data.country} onChange={handleChange} className={inputClass} /></div>
                     <div><label className={labelClass}>Pincode</label><input name="pincode" value={data.pincode} onChange={handleChange} className={inputClass} /></div>
+                  </div>
+                </div>
+              )}
+              {form.includeBaseFields?.bankDetails && (
+                <div>
+                  <h3 className="text-base font-semibold text-gray-800 mb-4 pb-2 border-b">Bank Details</h3>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    <div><label className={labelClass}>Bank Name</label><input name="bankName" value={data.bankName} onChange={handleChange} className={inputClass} /></div>
+                    <div><label className={labelClass}>Account Holder Name</label><input name="accountHolderName" value={data.accountHolderName} onChange={handleChange} className={inputClass} /></div>
+                    <div><label className={labelClass}>Account Number</label><input name="accountNumber" value={data.accountNumber} onChange={handleChange} className={inputClass} /></div>
+                    <div><label className={labelClass}>IFSC Code</label><input name="ifscCode" value={data.ifscCode} onChange={handleChange} className={inputClass} /></div>
+                    <div className="sm:col-span-2"><label className={labelClass}>Branch Name</label><input name="branchName" value={data.branchName} onChange={handleChange} className={inputClass} /></div>
                   </div>
                 </div>
               )}

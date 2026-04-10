@@ -13,6 +13,12 @@ const taskAPI = {
   getStats: () => api.get('/tasks/stats'),
   getAssignableEmployees: () => api.get('/tasks/assignable-employees'),
   getDeadlineAlerts: () => api.get('/tasks/alerts/deadline'),
+  
+  // New dynamic task methods
+  submitResponse: (taskId, data) => api.post(`/tasks/${taskId}/responses`, data),
+  reviewResponse: (taskId, responseId, data) => api.put(`/tasks/${taskId}/responses/${responseId}/review`, data),
+  createSubTasks: (taskId, data) => api.post(`/tasks/${taskId}/sub-tasks`, data),
+  getTaskResponses: (taskId, params = {}) => api.get(`/tasks/${taskId}/responses`, { params }),
 };
 
 export default taskAPI;

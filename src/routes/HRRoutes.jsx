@@ -19,7 +19,7 @@ const routes = [
   { path: "/attendance", component: Attendance, name: "Attendance", icon: "⏱️" },
   { path: "/leave-requests", component: LeavesManagement, name: "Manage Leaves", icon: "📅" },
   { path: "/announcements", component: ManageAnnouncements, name: "Manage Announcement", icon: "📢" },
-  // { path: "/manage-tasks", component: TaskManagement, name: "Manage Tasks", icon: "📋" },
+  { path: "/manage-tasks", component: TaskManagement, name: "Task Management", icon: "📋" },
   { path: "/payroll", component: Payroll, name: "Payroll", icon: "💰" },
   { path: "/reports", component: Reports, name: "Reports", icon: "📈" },
   { path: "/assets", component: AssetManagement, name: "Asset Management", icon: "📦" },

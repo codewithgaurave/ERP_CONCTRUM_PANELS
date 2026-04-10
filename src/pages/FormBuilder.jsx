@@ -74,7 +74,7 @@ const FormBuilder = () => {
     expiresAt: '',
     confirmationMessage: 'Your response has been recorded. Thank you!',
     showProgressBar: true,
-    includeBaseFields: { personalInfo: true, address: true }
+    includeBaseFields: { personalInfo: true, address: true, bankDetails: false }
   });
 
   const [draggedIndex, setDraggedIndex] = useState(null);
@@ -97,7 +97,7 @@ const FormBuilder = () => {
             expiresAt: data.expiresAt ? new Date(data.expiresAt).toISOString().slice(0, 16) : '',
             confirmationMessage: data.confirmationMessage,
             showProgressBar: data.showProgressBar,
-            includeBaseFields: data.includeBaseFields || { personalInfo: true, address: true }
+            includeBaseFields: data.includeBaseFields || { personalInfo: true, address: true, bankDetails: false }
           });
           if (data.headerImage) {
             setHeaderImagePreview(data.headerImage);
@@ -437,6 +437,25 @@ const FormBuilder = () => {
                 <div>
                   <span className="text-sm font-medium block" style={{ color: themeColors.text }}>Address</span>
                   <span className="text-xs" style={{ color: themeColors.textSecondary }}>Street, City, State, Country, Pincode</span>
+                </div>
+              </label>
+              <label 
+                className="flex items-center gap-3 px-4 py-3 rounded-xl border cursor-pointer transition-all duration-200 hover:shadow-md"
+                style={{ 
+                  borderColor: form.includeBaseFields.bankDetails ? themeColors.primary : themeColors.border,
+                  backgroundColor: form.includeBaseFields.bankDetails ? `${themeColors.primary}10` : 'transparent'
+                }}
+              >
+                <input
+                  type="checkbox"
+                  checked={form.includeBaseFields.bankDetails}
+                  onChange={e => setForm(prev => ({ ...prev, includeBaseFields: { ...prev.includeBaseFields, bankDetails: e.target.checked } }))}
+                  className="w-4 h-4 rounded"
+                  style={{ accentColor: themeColors.primary }}
+                />
+                <div>
+                  <span className="text-sm font-medium block" style={{ color: themeColors.text }}>Bank Details</span>
+                  <span className="text-xs" style={{ color: themeColors.textSecondary }}>Bank Name, Account Number, IFSC, Branch</span>
                 </div>
               </label>
             </div>
@@ -911,6 +930,17 @@ const FormBuilder = () => {
                     <p className="text-sm font-bold" style={{ color: themeColors.text }}>Address</p>
                   </div>
                   <p className="text-xs" style={{ color: themeColors.textSecondary }}>Street, City, State, Country, Pincode</p>
+                </div>
+              )}
+              {form.includeBaseFields.bankDetails && (
+                <div className="p-5 border-2 rounded-xl" style={{ borderColor: themeColors.border }}>
+                  <div className="flex items-center gap-3 mb-2">
+                    <div className="w-8 h-8 rounded-lg flex items-center justify-center" style={{ backgroundColor: `${themeColors.primary}15` }}>
+                      <Hash size={16} style={{ color: themeColors.primary }} />
+                    </div>
+                    <p className="text-sm font-bold" style={{ color: themeColors.text }}>Bank Details</p>
+                  </div>
+                  <p className="text-xs" style={{ color: themeColors.textSecondary }}>Bank Name, Account Number, IFSC, Branch</p>
                 </div>
               )}
               {form.fields.map((field, i) => {

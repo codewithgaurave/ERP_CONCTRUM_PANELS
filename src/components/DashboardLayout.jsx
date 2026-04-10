@@ -17,9 +17,11 @@ const DashboardLayout = () => {
   const { currentFont, corporateFonts, changeFont } = useFont();
   const location = useLocation();
 
-  // Get routes based on user role
+  // Get routes based on user role and filter out hidden routes
   const sidebarRoutes = useMemo(() => {
-    return user ? getRoutesByRole(user.role) : [];
+    const routes = user ? getRoutesByRole(user.role) : [];
+    // Filter out routes marked as hidden
+    return routes.filter(route => !route.hidden);
   }, [user]);
 
   const currentPageTitle = useMemo(() => {

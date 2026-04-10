@@ -21,6 +21,11 @@ const SubmissionsDrawer = ({ formLink, onClose, onConvert, themeColors }) => {
   const [viewMode, setViewMode] = useState('table'); // 'table' or 'cards'
 
   useEffect(() => {
+    if (!formLink._id) {
+      setLoading(false);
+      return;
+    }
+    
     formLinkAPI.getById(formLink._id)
       .then(res => setSubmissions(res.data.formLink.submissions || []))
       .catch(() => toast.error('Error loading submissions'))
@@ -66,6 +71,11 @@ const SubmissionsDrawer = ({ formLink, onClose, onConvert, themeColors }) => {
         'State': sub.state || '',
         'Country': sub.country || '',
         'Pincode': sub.pincode || '',
+        'Bank Name': sub.bankName || '',
+        'Account Holder Name': sub.accountHolderName || '',
+        'Account Number': sub.accountNumber || '',
+        'IFSC Code': sub.ifscCode || '',
+        'Branch Name': sub.branchName || '',
         'Status': sub.status || 'Pending',
         'Submitted At': new Date(sub.submittedAt).toLocaleString(),
       };
@@ -285,6 +295,13 @@ const SubmissionsDrawer = ({ formLink, onClose, onConvert, themeColors }) => {
                             ['State', sub.state || '-'],
                             ['Country', sub.country || '-'], 
                             ['Pincode', sub.pincode || '-'],
+                            ...(sub.bankName || sub.accountNumber || sub.ifscCode || sub.accountHolderName || sub.branchName ? [
+                              ['Bank Name', sub.bankName || '-'],
+                              ['Account Holder', sub.accountHolderName || '-'],
+                              ['Account Number', sub.accountNumber || '-'],
+                              ['IFSC Code', sub.ifscCode || '-'],
+                              ['Branch', sub.branchName || '-']
+                            ] : [])
                           ].map(([label, val]) => (
                             <div key={label} className="flex justify-between py-2 border-b border-gray-100">
                               <span className="font-medium" style={{ color: themeColors.textSecondary }}>{label}:</span>
