@@ -10,7 +10,8 @@ import {
   Settings as SettingsIcon,
   ChevronRight,
   LocateIcon,
-  BookCheck
+  BookCheck,
+  Package
 } from "lucide-react";
 import Departments from "./Departments";
 import Designations from "./Designations";
@@ -18,6 +19,7 @@ import WorkShifts from "./WorkShifts";
 import EmploymentStatuses from "./EmploymentStatuses";
 import OfficeLocations from "./OfficeLocations";
 import LeavePolicies from "./LeavePolicies";
+import AssetCategoryManagement from "../components/AssetCategoryManagement";
 
 const Settings = () => {
   const { themeColors } = useTheme();
@@ -66,6 +68,13 @@ const Settings = () => {
       icon: BookCheck,
       component: LeavePolicies,
       description: "Manage leave policies"
+    },
+    {
+      id: "asset-categories",
+      name: "Asset Categories",
+      icon: Package,
+      component: AssetCategoryManagement,
+      description: "Manage asset categories for better organization"
     },
   ];
 
@@ -144,10 +153,10 @@ const Settings = () => {
             </h3>
             <div className="space-y-2 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
               {[
-                { name: "Leave Policies", icon: "📋" },
                 { name: "Attendance Rules", icon: "⏰" },
                 { name: "Payroll Settings", icon: "💰" },
-                { name: "System Preferences", icon: "⚙️" }
+                { name: "System Preferences", icon: "⚙️" },
+                { name: "Notification Settings", icon: "🔔" }
               ].map((item, index) => (
                 <div
                   key={index}

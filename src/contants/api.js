@@ -17,6 +17,7 @@ const apiRoutes = {
   dashboard: `${BASE_URL}/${API_PREFIX}/dashboard`,
   tasks: `${BASE_URL}/${API_PREFIX}/tasks`,
   assets: `${BASE_URL}/${API_PREFIX}/assets`,
+  assetCategories: `${BASE_URL}/${API_PREFIX}/asset-categories`,
   assetRequests: `${BASE_URL}/${API_PREFIX}/asset-requests`,
   notices: `${BASE_URL}/${API_PREFIX}/notices`,
   payroll: `${BASE_URL}/${API_PREFIX}/payroll`,

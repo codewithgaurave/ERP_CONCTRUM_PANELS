@@ -107,6 +107,31 @@ const assetAPI = {
     axios.get(`${apiRoutes.assets}/history/my`, {
       headers: getAuthHeader(),
     }),
+
+  // Excel operations
+  downloadSample: () =>
+    axios.get(`${apiRoutes.assets}/excel/sample`, {
+      headers: getAuthHeader(),
+      responseType: 'blob'
+    }),
+
+  importFromExcel: (file) => {
+    const formData = new FormData();
+    formData.append('file', file);
+    return axios.post(`${apiRoutes.assets}/excel/import`, formData, {
+      headers: {
+        ...getAuthHeader(),
+        'Content-Type': 'multipart/form-data'
+      }
+    });
+  },
+
+  exportToExcel: (params = {}) =>
+    axios.get(`${apiRoutes.assets}/excel/export`, {
+      params,
+      headers: getAuthHeader(),
+      responseType: 'blob'
+    }),
 };
 
 export default assetAPI;
